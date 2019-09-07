@@ -35,7 +35,7 @@ https://www.youtube.com/watch?v=9kRgVxULbag
 
 #### Frameworks
    ##### Android Studio
-https://developer.android.com/studio
+   https://developer.android.com/studio
    - Industry standard, teammates may already have experience working with a similar environment. Can be used in conjunction with React Native for Android testing.
    - Experience with Java required, or capability of learning Kotlin. May be a bit of learning curve navigating through the environment.
    
