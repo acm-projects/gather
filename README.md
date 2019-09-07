@@ -34,12 +34,13 @@ These are software that I recommended teammates to use for the project. Teammate
 
 #### Frameworks
    ##### Android Studio
-   Classic standard, teammates may already have experience working with a similar environment. Can be used in conjunction with React Native for Android testing.
-   Experience with Java required, or capability of learning Kotlin. May be a bit of learning curve navigating through the environment.
-   hhttps://developer.android.com/studio
+   - Industry standard, teammates may already have experience working with a similar environment. Can be used in conjunction with React Native for Android testing.
+   - Experience with Java required, or capability of learning Kotlin. May be a bit of learning curve navigating through the environment.
+   https://developer.android.com/studio
    
 #### Prototyping
-   ##### Origami (Mac Users only!)
+   
+   Origami (Mac Users only!)
    https://origami.design/examples/
    
    - Seems to be free and used by other large companies. Not sure of the the learning curve.
