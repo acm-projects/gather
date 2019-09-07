@@ -18,25 +18,26 @@ Mobile app that gathers friends to eat or go grocery shopping together and conne
 These are software that I recommended teammates to use for the project. Teammates are free to use any software that comes to mind to build the application, but that should be decided as a team within the first weeks of project planning. Please let your teammates and project manager (me) know if you have experience working with a potential framework/software.
    
 ### Main Framework: React Native 
+https://facebook.github.io/react-native/
    
 ### Database: Firebase
+https://www.youtube.com/watch?v=9kRgVxULbag
    Generally easy to learn. 
-   https://www.youtube.com/watch?v=9kRgVxULbag
      
 ### API: Mapbox
    Alternatively Google Maps API
       
 ### Prototyping: Figma
-   Great for designing and planning the visuals of the application. Clean mockups
    https://www.figma.com
+   Great for designing and planning the visuals of the application. Clean mockups
    
 ## Alternative Software
 
 #### Frameworks
    ##### Android Studio
+https://developer.android.com/studio
    - Industry standard, teammates may already have experience working with a similar environment. Can be used in conjunction with React Native for Android testing.
    - Experience with Java required, or capability of learning Kotlin. May be a bit of learning curve navigating through the environment.
-   https://developer.android.com/studio
    
 #### Prototyping
    
