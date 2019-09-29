@@ -17,7 +17,7 @@ export default class Login extends Component {
             <View>
                 <TextInput
                     style={styles.input}
-                    placeholder={'Username'}
+                    placeholder={'Username or Email'}
                     placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
                     underlineColorAndroid='transparent'
                 />
@@ -34,8 +34,17 @@ export default class Login extends Component {
             </View>
 
             <TouchableOpacity style={styles.btnLogin}>
-                <Text style={styles.text} >Gather :D</Text>
+                <Text style={styles.loginText} >Login</Text>
             </TouchableOpacity>
+
+            <TouchableOpacity style={styles.btnGoogle}>
+                <Text style={styles.textGoogle} >Login with Google</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.btnSignUp}>
+                <Text style={styles.textGoogle} >Sign Up</Text>
+            </TouchableOpacity>
+
       </ImageBackground>
     );
   }
@@ -53,8 +62,8 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     logo: {
-        width: 120,
-        height: 120
+        width: 150,
+        height: 150
     },
     logoText:{
         color: 'white',
@@ -63,9 +72,15 @@ const styles = StyleSheet.create({
         marginTop: 10,
         opacity: 0.5
     },
+    loginText:{
+            color: 'white',
+            fontSize: 30,
+            fontWeight: '500',
+            textAlign: 'center',
+        },
     input: {
         width: WIDTH - 55,
-        height: 45,
+        height: 50,
         borderRadius: 45,
         fontSize: 16,
         paddingLeft: 45,
@@ -75,18 +90,41 @@ const styles = StyleSheet.create({
         marginTop: 5
     },
     btnLogin: {
-        width: WIDTH - 55,
-        height: 45,
+        width: WIDTH - 150,
+        height: 50,
         borderRadius: 45,
         backgroundColor: '#432577',
         justifyContent: 'center',
         marginTop: 20
     },
+    btnGoogle: {
+        width: WIDTH - 200,
+        height: 45,
+        borderRadius: 45,
+        backgroundColor: '#432577',
+        justifyContent: 'center',
+        marginTop: 70,
+
+    },
+    btnSignUp: {
+            width: WIDTH - 200,
+            height: 45,
+            borderRadius: 45,
+            backgroundColor: '#432577',
+            justifyContent: 'center',
+            marginTop: 20,
+
+        },
     text: {
         color: 'rgba(255, 255, 255, 0.7)',
         fontSize: 16,
         textAlign:  'center'
-    }
+    },
+    textGoogle: {
+            color: 'white',
+            fontSize: 16,
+            textAlign:  'center'
+        }
 
 
 });
