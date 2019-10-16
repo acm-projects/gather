@@ -1,11 +1,61 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, ImageBackground, Image, TextInput, Dimensions, TouchableOpacity } from 'react-native';
+import {Button} from 'native-base';
 
 import bgImage from './Images/OrangeBackround.jpg'
 import logo from './Images/Logo.jpg'
 
+import * as firebase from 'firebase';
+
+        var config = {
+            apiKey: "AIzaSyBTTXx1PbNDkQ3CZESDpSOYtlVq-IwUORI",
+            authDomain: "gather-4cb69.firebaseapp.com",
+            databaseURL: "https://gather-4cb69.firebaseio.com",
+            projectId: "gather-4cb69",
+            storageBucket: "gather-4cb69.appspot.com",
+            messagingSenderId: "550846630622",
+            appId: "1:550846630622:web:ba0898d5f5a23ab07cd04f",
+            measurementId: "G-M18QKHTKMF"
+        };
+            firebase.initializeApp(config);
+
 const { width: WIDTH } = Dimensions.get('window')
 export default class Login extends Component {
+
+        constructor(props){
+            super(props)
+
+            this.state = ({
+                email: '',
+                password: ''
+            })
+        }
+
+        signUpUser = (email,password) => {
+
+            try{
+                firebase.auth().createUserWithEmailAndPassword(email,password)
+            }
+
+            catch(error){
+                console.log(error.toString())
+            }
+        }
+
+        loginUser = (email,password) => {
+
+            try{
+                firebase.auth().signInWithEmailAndPassword(email,password)
+            }
+
+            catch(error){
+                console.log(error.toString())
+            }
+
+        }
+
+
+
   render() {
     return (
       <ImageBackground source={bgImage} style={styles.backgroundContainer}>
@@ -20,6 +70,10 @@ export default class Login extends Component {
                     placeholder={'Username or Email'}
                     placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
                     underlineColorAndroid='transparent'
+                    autoCorrect={false}
+                    autoCapitalize = "none"
+                    onChangeText = {(email) => this.setState({email})}
+                    value = {this.state.email}
                 />
             </View>
 
@@ -30,12 +84,25 @@ export default class Login extends Component {
                     secureTextEntry={true}
                     placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
                     underlineColorAndroid='transparent'
+                    secureTextEntry={true}
+                    autoCorrect={false}
+                    autoCapitalize = "none"
+                    onChangeText = {(password) => this.setState({password})}
+                    value = {this.state.password}
                 />
             </View>
 
-            <TouchableOpacity style={styles.btnLogin}>
-                <Text style={styles.loginText} >Login</Text>
-            </TouchableOpacity>
+
+            <Button
+                full
+                rounded
+                success
+                onPress = {() => this.loginUser(this.state.email,this.state.password)}
+            >
+
+            <Text> Login </Text>
+            </Button>
+
 
             <TouchableOpacity style={styles.btnGoogle}>
                 <Text style={styles.textGoogle} >Login with Google</Text>
@@ -44,6 +111,17 @@ export default class Login extends Component {
             <TouchableOpacity style={styles.btnSignUp}>
                 <Text style={styles.textGoogle} >Sign Up</Text>
             </TouchableOpacity>
+
+
+            <Button
+                full
+                rounded
+                success
+                onPress = {() => this.signUpUser(this.state.email,this.state.password)}
+            >
+
+            <Text> Sign2 </Text>
+            </Button>
 
       </ImageBackground>
     );
