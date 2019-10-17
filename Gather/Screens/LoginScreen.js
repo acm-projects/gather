@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, ImageBackground, Image, TextInput, Dimensions, TouchableOpacity } from 'react-native';
+import { Text, View, StyleSheet, ImageBackground, Image, TextInput, Dimensions, TouchableOpacity, Button } from 'react-native';
 
 import bgImage from './Images/OrangeBackround.jpg'
 import logo from './Images/Logo.jpg'
@@ -33,17 +33,32 @@ export default class Login extends Component {
                 />
             </View>
 
-            <TouchableOpacity style={styles.btnLogin}>
-                <Text style={styles.loginText} >Login</Text>
-            </TouchableOpacity>
+            <View style = {styles.btnLogin}>
+                <Button
+                    title="Login"
+                    onPress={()=>{
+                    this.props.navigation.navigate("Sign Up")
+                    }}
+                />
+            </View>
 
-            <TouchableOpacity style={styles.btnGoogle}>
-                <Text style={styles.textGoogle} >Login with Google</Text>
-            </TouchableOpacity>
+            <View style = {styles.buttonContainer}>
+                <Button
+                    title="Login with Google"
+                    onPress={()=>{
+                    this.props.navigation.navigate("Sign Up")
+                    }}
+                />
+            </View>
 
-            <TouchableOpacity style={styles.btnSignUp}>
-                <Text style={styles.textGoogle} >Sign Up</Text>
-            </TouchableOpacity>
+            <View style = {styles.buttonContainer}>
+                <Button
+                    title="Sign Up"
+                    onPress={()=>{
+                    this.props.navigation.navigate("SignUpScreen")
+                    }}
+                />
+            </View>
 
       </ImageBackground>
     );
@@ -93,8 +108,6 @@ const styles = StyleSheet.create({
         width: WIDTH - 150,
         height: 50,
         borderRadius: 45,
-        backgroundColor: '#432577',
-        justifyContent: 'center',
         marginTop: 20
     },
     btnGoogle: {
@@ -124,7 +137,13 @@ const styles = StyleSheet.create({
             color: 'white',
             fontSize: 16,
             textAlign:  'center'
-        }
+        },
+    buttonContainer:{
+          width: WIDTH - 200,
+          height: 45,
+          borderRadius: 45,
+          marginTop: 20,
+        },
 
 
 });
