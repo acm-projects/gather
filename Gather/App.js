@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+//run npm install react-navigation-stack before running
+import {createAppContainer} from "react-navigation";
+import {createStackNavigator} from "react-navigation-stack";
+
+import HomeScreen from "./Screens/HomeScreen";
+import LoginScreen from "./Screens/LoginScreen";
+import SignUpScreen from "./Screens/SignUpScreen";
+=======
 /*
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, ImageBackground, Image, TextInput, Dimensions, TouchableOpacity } from 'react-native';
@@ -6,6 +15,7 @@ import bgImage from './Images/OrangeBackround.jpg'
 //import logo from './Images/Logo.jpg'
 
 const { width: WIDTH } = Dimensions.get('window')
+>>>>>>> fba6f87ca277d59faf065cf95e618166bd21c61d
 
 
 export default class Login extends Component {
@@ -317,6 +327,15 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
+<<<<<<< HEAD
+    LoginScreen:{
+        screen:LoginScreen
+    },
+    SignUpScreen:{
+        screen:SignUpScreen
+    }
+})
+=======
     logoContainer: {
         alignItems: 'center'
     },
@@ -388,4 +407,5 @@ const styles = StyleSheet.create({
 
 });
 
+>>>>>>> fba6f87ca277d59faf065cf95e618166bd21c61d
 
