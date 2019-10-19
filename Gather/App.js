@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+/**
 //run npm install react-navigation-stack before running
 import {createAppContainer} from "react-navigation";
 import {createStackNavigator} from "react-navigation-stack";
@@ -6,173 +6,7 @@ import {createStackNavigator} from "react-navigation-stack";
 import HomeScreen from "./Screens/HomeScreen";
 import LoginScreen from "./Screens/LoginScreen";
 import SignUpScreen from "./Screens/SignUpScreen";
-=======
-/*
-import React, { Component } from 'react';
-import { Text, View, StyleSheet, ImageBackground, Image, TextInput, Dimensions, TouchableOpacity } from 'react-native';
 
-import bgImage from './Images/OrangeBackround.jpg'
-//import logo from './Images/Logo.jpg'
-
-const { width: WIDTH } = Dimensions.get('window')
->>>>>>> fba6f87ca277d59faf065cf95e618166bd21c61d
-
-
-export default class Login extends Component {
- render() {
-   return (
-     <ImageBackground source={bgImage} style={styles.backgroundContainer}>
-
-           <View>
-               <TextInput
-                   style={styles.input}
-                   placeholder={'First Name'}
-                   placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
-                   underlineColorAndroid='transparent'
-               />
-           </View>
-
-           <View>
-                           <TextInput
-                           style = {styles.input}
-                           placeholder = {'Last Name'}
-                           placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
-                           underlineColorAndroid='transparent'
-                           />
-                        </View>
-
-
-           <View>
-                           <TextInput
-                           style = {styles.input}
-                           placeholder = {'username'}
-                           placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
-                           underlineColorAndroid='transparent'
-                           />
-                        </View>
-
-
-           <View>
-               <TextInput
-                   style={styles.input}
-                   placeholder={'Password'}
-                   secureTextEntry={true}
-                   placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
-                   underlineColorAndroid='transparent'
-               />
-           </View>
-
-           <TouchableOpacity style={styles.btnGoogle}>
-               <Text style={styles.textGoogle} >Login with Google</Text>
-           </TouchableOpacity>
-
-           <TouchableOpacity style={styles.btnSignUp}>
-               <Text style={styles.textGoogle} >Sign Up</Text>
-           </TouchableOpacity>
-
-     </ImageBackground>
-   );
- }
-}
-
-
-
-
-
-
-const styles = StyleSheet.create({
-   backgroundContainer: {
-       flex: 1,
-       width: null,
-       height: null,
-       justifyContent: 'space-between',
-       alignItems: 'center',
-   },
-
-   logoContainer: {
-       alignItems: 'center'
-   },
-   logo: {
-       width: 150,
-       height: 150
-   },
-   logoText:{
-       color: 'white',
-       fontSize: 20,
-       fontWeight: '500',
-       marginTop: 10,
-       opacity: 0.5
-   },
-
-   loginText:{
-           color: 'white',
-           fontSize: 30,
-           fontWeight: '500',
-           textAlign: 'auto',
-       },
-   input: {
-       width: WIDTH - 55,
-       height: 50,
-       borderRadius: 45,
-       fontSize: 16,
-       paddingLeft: 45,
-       backgroundColor: 'rgba(0, 0, 0, 0.35)',
-       color: 'rgba(255, 255, 255, 0.7)',
-       marginHorizontal: 35,
-       marginTop: 20
-   },
-   btnLogin: {
-       width: WIDTH - 150,
-       height: 50,
-       borderRadius: 45,
-       backgroundColor: '#432577',
-       justifyContent: 'center',
-       marginTop: 20
-   },
-   btnGoogle: {
-       width: WIDTH - 200,
-       height: 45,
-       borderRadius: 45,
-       backgroundColor: '#432577',
-       justifyContent: 'center',
-       marginTop: -10,
-
-   },
-   btnSignUp: {
-           width: WIDTH - 200,
-           height: 40,
-           borderRadius: 45,
-           backgroundColor: '#432577',
-           justifyContent: 'center',
-           marginTop: -20,
-           marginBottom: 200
-
-
-
-       },
-   text: {
-       color: 'rgba(255, 255, 255, 0.7)',
-       fontSize: 16,
-       textAlign:  'center'
-   },
-   textGoogle: {
-           color: 'white',
-           fontSize: 16,
-           textAlign:  'center'
-       }
-
-
-});
-*/
-
-
-
-import React, { Component } from 'react';
-import { Text, View, StyleSheet, ImageBackground, Image, TextInput, Dimensions, TouchableOpacity } from 'react-native';
-import {Button} from 'native-base';
-
-import bgImage from './Images/OrangeBackround.jpg'
-import logo from './Images/Logo.jpg'
 
 import * as firebase from 'firebase';
 
@@ -407,5 +241,27 @@ const styles = StyleSheet.create({
 
 });
 
->>>>>>> fba6f87ca277d59faf065cf95e618166bd21c61d
+**/
+
+//run npm install react-navigation-stack before running
+import {createAppContainer} from "react-navigation";
+import {createStackNavigator} from "react-navigation-stack";
+
+import HomeScreen from "./Screens/HomeScreen";
+import LoginScreen from "./Screens/LoginScreen";
+import SignUpScreen from "./Screens/SignUpScreen";
+
+const AppNavigator= createStackNavigator({
+   HomeScreen:{
+       screen:HomeScreen
+   },
+   LoginScreen:{
+       screen:LoginScreen
+   },
+   SignUpScreen:{
+       screen:SignUpScreen
+   }
+})
+
+export default createAppContainer(AppNavigator)
 

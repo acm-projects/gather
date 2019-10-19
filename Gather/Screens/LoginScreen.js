@@ -4,8 +4,31 @@ import { Text, View, StyleSheet, ImageBackground, Image, TextInput, Dimensions, 
 import bgImage from './Images/OrangeBackround.jpg'
 import logo from './Images/Logo.jpg'
 
+import firebase from './firebaseconfig.js';
+
 const { width: WIDTH } = Dimensions.get('window')
 export default class Login extends Component {
+
+             constructor(props){
+                        super(props)
+
+                        this.state = ({
+                            email: '',
+                            password: ''
+                        })
+                    }
+
+             loginUser = (email, password) => {
+
+                 try{
+                     firebase.auth().signInWithEmailAndPassword(email, password)
+                 }
+
+                 catch(error){
+                     console.log(error.toString())
+                 }
+             }
+
   render() {
     return (
       <ImageBackground source={bgImage} style={styles.backgroundContainer}>
@@ -20,6 +43,8 @@ export default class Login extends Component {
                     placeholder={'Username or Email'}
                     placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
                     underlineColorAndroid='transparent'
+                    onChangeText = {(email) => this.setState({email})}
+                    value = {this.state.email}
                 />
             </View>
 
@@ -30,6 +55,11 @@ export default class Login extends Component {
                     secureTextEntry={true}
                     placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
                     underlineColorAndroid='transparent'
+                    secureTextEntry={true}
+                    autoCorrect={false}
+                    autoCapitalize = "none"
+                    onChangeText = {(password) => this.setState({password})}
+                    value = {this.state.password}
                 />
             </View>
 
@@ -37,7 +67,7 @@ export default class Login extends Component {
                 <Button
                     title="Login"
                     onPress={()=>{
-                    this.props.navigation.navigate("Sign Up")
+                   this.loginUser(this.state.email, this.state.password)
                     }}
                 />
             </View>
