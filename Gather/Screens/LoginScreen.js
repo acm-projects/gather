@@ -22,12 +22,35 @@ export default class Login extends Component {
 
                  try{
                      firebase.auth().signInWithEmailAndPassword(email, password)
+
+                      firebase.auth().onAuthStateChanged(function(user) {
+                        if (user) {
+
+                          var email, uid, emailVerified;
+
+                          if (user != null) {
+                            email = user.email;
+                            emailVerified = user.emailVerified;
+                            uid = user.uid;  
+
+                          }
+
+
+
+                        } else {
+                            console.log(error.toString())
+                        }
+                      });
                  }
 
                  catch(error){
                      console.log(error.toString())
                  }
              }
+
+
+
+
 
   render() {
     return (
