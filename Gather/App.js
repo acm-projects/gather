@@ -250,6 +250,8 @@ import {createStackNavigator} from "react-navigation-stack";
 import HomeScreen from "./Screens/HomeScreen";
 import LoginScreen from "./Screens/LoginScreen";
 import SignUpScreen from "./Screens/SignUpScreen";
+import EventCreationScreen from "./Screens/EventCreationScreen";
+
 
 const AppNavigator= createStackNavigator({
    HomeScreen:{
@@ -260,6 +262,9 @@ const AppNavigator= createStackNavigator({
    },
    SignUpScreen:{
        screen:SignUpScreen
+   },
+   EventCreationScreen:{
+        screen:EventCreationScreen
    }
 })
 

@@ -91,6 +91,7 @@ export default class Login extends Component {
                     title="Login"
                     onPress={()=>{
                    this.loginUser(this.state.email, this.state.password)
+                   this.props.navigation.navigate("EventCreationScreen")
                     }}
                 />
             </View>

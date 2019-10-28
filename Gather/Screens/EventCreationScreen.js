@@ -7,7 +7,8 @@ import firebase from './firebaseconfig.js';
 import {Button} from 'native-base';
 
 const { width: WIDTH } = Dimensions.get('window')
-export default class Login extends Component {
+
+export default class Gather extends Component {
 
   constructor(props){
             super(props)
@@ -191,24 +192,3 @@ const styles = StyleSheet.create({
 
 
 });
-
-
-
-
-
-
-//import React, { Component } from 'react';
-////import { Text, View, StyleSheet, ImageBackground, Image, TextInput, Dimensions, TouchableOpacity } from 'react-native';
-////import firebase from 'firebase';
-////import Database from './database.js';
-//import Login from './login.js';
-////import bgImage from './Images/OrangeBackround.jpg'
-////import logo from './Images/Logo.jpg'
-////
-////const { width: WIDTH } = Dimensions.get('window')
-//
-//export default Login
-
-
-
-
