@@ -37,7 +37,7 @@ export default class Login extends Component {
                 <Button
                     title="Login"
                     onPress={()=>{
-                    this.props.navigation.navigate("Sign Up")
+                    this.props.navigation.navigate("EventCreationScreen")
                     }}
                 />
             </View>

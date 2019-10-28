@@ -12,9 +12,9 @@ export default class Home extends Component {
             <View style = {styles.buttonContainer}>
                 <Button
                     title="List"
-                   // onPress={()=>{
-                    //this.props.navigation.navigate("LoginScreen")
-                    //}}
+                    onPress={()=>{
+                       // this.props.navigation.navigate("EventCreationScreen")
+                    }}
                 />
             </View>
 
@@ -30,7 +30,7 @@ export default class Home extends Component {
 
             <View style = {styles.buttonContainer}>
                 <Button
-                    title="Login"
+                    title="Post"
                     onPress={()=>{
                     this.props.navigation.navigate("LoginScreen")
                     }}

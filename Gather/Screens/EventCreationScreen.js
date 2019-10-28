@@ -1,73 +1,72 @@
-import React, { Component } from 'react';
-import { Text, View, StyleSheet, ImageBackground, Image, TextInput, Dimensions, TouchableOpacity, Button } from 'react-native';
+/*
+Run these two commands in your command prompt before using:
+npm install
+npm install --save react-native-material-dropdown
+*/
 
+import React, { Component } from 'react';
+import { Text, View, StyleSheet, ImageBackground, Image, TextInput, Dimensions, TouchableOpacity } from 'react-native';
+import { Dropdown } from 'react-native-material-dropdown';
 import bgImage from './Images/OrangeBackround.jpg'
 import logo from './Images/Logo.jpg'
 
 const { width: WIDTH } = Dimensions.get('window')
 export default class Login extends Component {
   render() {
+  let data = [{
+        value: 'AM',
+      }, {
+        value: 'PM',
+      }];
+  let data2 = [{
+          value: 'Public',
+        }, {
+          value: 'Private',
+        }];
     return (
       <ImageBackground source={bgImage} style={styles.backgroundContainer}>
-            <View style={styles.logoContainer}>
-                <Image source={logo} style={styles.logo} />
-                <Text style={styles.logoText}>LOGIN</Text>
-            </View>
 
             <View>
+
                 <TextInput
                     style={styles.input}
-                    placeholder={'Name'}
+                    placeholder={'Event Name'}
+                    placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
+                    underlineColorAndroid='transparent'
+                />
+                <TextInput
+                    style={styles.input}
+                    placeholder={'Time'}
+                    placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
+                    underlineColorAndroid='transparent'
+                />
+                <Dropdown
+                    label={'AM/PM'}
+                    itemPadding = {4}
+                    data={data}
+                />
+                <TextInput
+                    style={styles.input}
+                    placeholder={'Location'}
+                    placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
+                    underlineColorAndroid='transparent'
+                />
+                <Dropdown
+                    label={'Public/Private'}
+                    itemPadding = {4}
+                    data={data2}
+                />
+                <TextInput
+                    style={styles.description}
+                    placeholder={'Description'}
                     placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
                     underlineColorAndroid='transparent'
                 />
             </View>
 
-            <View>
-                            <TextInput
-                                style={styles.input}
-                                placeholder={'Email'}
-                                placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
-                                underlineColorAndroid='transparent'
-                            />
-                        </View>
-
-            <View>
-                            <TextInput
-                                style={styles.input}
-                                placeholder={'Username'}
-                                placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
-                                underlineColorAndroid='transparent'
-                            />
-                        </View>
-
-            <View>
-                <TextInput
-                    style={styles.input}
-                    placeholder={'Password'}
-                    secureTextEntry={true}
-                    placeholderTextColor={'rgba(255, 255, 255, 0.7)'}
-                    underlineColorAndroid='transparent'
-                />
-            </View>
-
-            <View style = {styles.buttonContainer}>
-                <Button
-                    title="Sign up with Google"
-                    onPress={()=>{
-                    this.props.navigation.navigate("Sign Up")
-                    }}
-                />
-            </View>
-
-            <View style = {styles.buttonContainer}>
-                <Button
-                    title="Sign Up"
-                    onPress={()=>{
-                    this.props.navigation.navigate("EventCreationScreen")
-                    }}
-                />
-            </View>
+            <TouchableOpacity style={styles.btnLogin}>
+                <Text style={styles.loginText} >Post Gather</Text>
+            </TouchableOpacity>
 
       </ImageBackground>
     );
@@ -117,15 +116,20 @@ const styles = StyleSheet.create({
         width: WIDTH - 150,
         height: 50,
         borderRadius: 45,
-        marginTop: 20
-    },
-    btnGoogle: {
-        width: WIDTH - 200,
-        height: 45,
-        borderRadius: 45,
         backgroundColor: '#432577',
         justifyContent: 'center',
-        marginTop: 70,
+        marginTop: 20
+    },
+    description: {
+        width: WIDTH - 55,
+                height: 125,
+                borderRadius: 45,
+                fontSize: 16,
+                paddingLeft: 45,
+                backgroundColor: 'rgba(0, 0, 0, 0.35)',
+                color: 'rgba(255, 255, 255, 0.7)',
+                marginHorizontal: 25,
+                marginTop: 5
 
     },
     btnSignUp: {
@@ -146,13 +150,7 @@ const styles = StyleSheet.create({
             color: 'white',
             fontSize: 16,
             textAlign:  'center'
-        },
-    buttonContainer:{
-          width: WIDTH - 200,
-          height: 45,
-          borderRadius: 45,
-          marginTop: 20,
-        },
+        }
 
 
 });

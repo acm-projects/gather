@@ -9,6 +9,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "@mapbox/react-native-mapbox-gl": "https://github.com/nitaliano/react-native-mapbox-gl/tarball/master",
     "react": "16.9.0",
     "react-native": "0.61.1",
     "react-native-gesture-handler": "^1.4.1",
