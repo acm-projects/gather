@@ -80,6 +80,7 @@ export default class Login extends Component {
                     title="Sign Up"
                     onPress={()=>{
                     this.signUpUser(this.state.email, this.state.password)
+                    this.props.navigation.navigate("database")
                     }}
                 />
             </View>

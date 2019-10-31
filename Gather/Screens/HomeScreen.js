@@ -3,9 +3,41 @@ import { Text, View, StyleSheet, ImageBackground, Image, TextInput, Dimensions, 
 
 import bgImage from './Images/OrangeBackround.jpg'
 import logo from './Images/Logo.jpg'
+import firebase from './firebaseconfig.js';
 
 const { width: WIDTH } = Dimensions.get('window')
 export default class Home extends Component {
+
+
+    constructor(props){
+        super(props)
+
+        this.state = ({
+            title: ''
+
+        })
+
+    }
+
+    componentDidMount(){
+
+            const {title} = this.state;
+
+            var db = firebase.database();
+            var ref = db.ref('users');
+
+            ref.on("value", function(snapshot){
+
+                     var value = childSnapshot.val();
+                     var printTitle = value.title;
+                     console.log("what is up");
+
+
+            })
+    }
+
+
+
   render() {
     return (
       <ImageBackground source={bgImage} style={styles.backgroundContainer}>

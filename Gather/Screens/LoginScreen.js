@@ -31,7 +31,7 @@ export default class Login extends Component {
                           if (user != null) {
                             email = user.email;
                             emailVerified = user.emailVerified;
-                            uid = user.uid;  
+                            uid = user.uid;
 
                           }
 
@@ -91,6 +91,7 @@ export default class Login extends Component {
                     title="Login"
                     onPress={()=>{
                    this.loginUser(this.state.email, this.state.password)
+                   this.props.navigation.navigate("database")
                     }}
                 />
             </View>
